@@ -4,7 +4,7 @@
 
 use App\Model\Question;
 use App\Model\Category;
-use App\Model\User;
+use App\User;
 use Faker\Generator as Faker;
 
 $factory->define(Question::class, function (Faker $faker) {
