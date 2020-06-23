@@ -76,8 +76,8 @@ class ReplyController extends Controller
      */
     public function update(Question $question,Request $request, Reply $reply)
     {
-        $question->replies()->update($request->all());
-        return response('updated',Response::HTTP_CREATED);
+        $reply->update($request->all());
+        return response('updated',Response::HTTP_ACCEPTED);
     }
 
     /**
