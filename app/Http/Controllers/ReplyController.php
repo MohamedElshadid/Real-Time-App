@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Model\Reply;
+use App\Model\Question;
+
 use Illuminate\Http\Request;
 
 class ReplyController extends Controller
@@ -12,9 +14,11 @@ class ReplyController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Question $question)
     {
-        //
+        return $question->replies;
+        //return reply::latest()->get();
+
     }
 
     /**
@@ -44,9 +48,9 @@ class ReplyController extends Controller
      * @param  \App\Model\Reply  $reply
      * @return \Illuminate\Http\Response
      */
-    public function show(Reply $reply)
+    public function show(Question $question,Reply $reply)
     {
-        //
+        return $reply;
     }
 
     /**
@@ -78,8 +82,9 @@ class ReplyController extends Controller
      * @param  \App\Model\Reply  $reply
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Reply $reply)
+    public function destroy(Question $question,Reply $reply)
     {
-        //
+        $reply->delete();
+        return response('Deleted' , 200);
     }
 }
