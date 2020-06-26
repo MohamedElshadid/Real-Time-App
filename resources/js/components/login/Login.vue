@@ -29,7 +29,7 @@
       </v-row>
       <v-btn color="#3fb1ac" type="submit">Login</v-btn>
       <router-link to="/signup">
-        <v-btn text>Sign Up</v-btn>
+        <v-btn color="#9dd0cd">Sign Up</v-btn>
       </router-link>
 
     </v-container>
@@ -50,10 +50,16 @@
             }
         }
     },
+    created() {
+      if(User.loggedIn())
+      {
+        this.$router.push({name:'forum'})
+      }
+    },
     methods:{
-        login(){
-            User.login(this.form)
-        }
+      login(){
+          User.login(this.form)
+      }
     }
   }
 </script>
