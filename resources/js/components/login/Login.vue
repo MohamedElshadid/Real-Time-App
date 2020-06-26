@@ -28,6 +28,10 @@
         </v-col>
       </v-row>
       <v-btn color="#3fb1ac" type="submit">Login</v-btn>
+      <router-link to="/signup">
+        <v-btn text>Sign Up</v-btn>
+      </router-link>
+
     </v-container>
   </v-form>
 </template>
