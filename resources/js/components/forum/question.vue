@@ -10,7 +10,9 @@
                 {{data.title}}
             </router-link>
         </h3>
-        <div grey--text>{{data.created_at}}</div>
+        <div grey--text>
+            {{data.user}} said {{data.created_at}}
+        </div>
     </v-card-subtitle>
 
     <v-card-text class="text--primary mt-4">
