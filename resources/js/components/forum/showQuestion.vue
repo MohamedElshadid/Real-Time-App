@@ -13,7 +13,7 @@
               <v-spacer></v-spacer>
               <v-btn color="teal">5 Replies</v-btn>
           </v-card-title>
-          <v-card-text v-html="data.body">
+          <v-card-text v-html="body">
 
           </v-card-text>
       </v-container>
@@ -21,8 +21,14 @@
 </template>
 
 <script>
+
 export default {
-    props :['data']
+    props :['data'],
+    computed: {
+        body(){
+            return md.parse(this.data.body)
+        }
+    },
 }
 </script>
 
